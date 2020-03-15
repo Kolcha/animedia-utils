@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name="animedia-utils",
-    version="0.1.0",
+    version="0.1.1",
     author="Nick Korotysh",
     author_email="kolchaprogrammer@list.ru",
     packages=setuptools.find_packages(),
