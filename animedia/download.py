@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import cgi
+import lxml.html
 import requests
-
-from lxml import html
 
 
 def _get_torrent_links(content):
-    tree = html.fromstring(content)
+    tree = lxml.html.fromstring(content)
     nodes = tree.xpath('//div[@class="download_tracker"]/a')
+    nodes.extend(tree.xpath('//a[@class="download_tracker_btn_input"]'))
     return [n.get('href') for n in nodes if n.get('href').startswith('http')]
 
 
