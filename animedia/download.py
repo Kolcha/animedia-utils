@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import cgi
 import lxml.html
 import requests
@@ -13,7 +11,7 @@ def _get_torrent_links(content):
 
 
 def _get_torrent_file_name(headers):
-    value, params = cgi.parse_header(headers['Content-Disposition'])
+    _, params = cgi.parse_header(headers['Content-Disposition'])
     return params['filename']
 
 
@@ -35,6 +33,6 @@ def download_torrents(link, session=None):
 
 if __name__ == '__main__':
     ts = download_torrents('https://tt.animedia.tv/anime/vrata-shtajnera')
-    for t in ts:
-        with open(t[0], "wb") as f:
-            f.write(t[1])
+    for name, data in ts:
+        with open(name, "wb") as f:
+            f.write(data)
