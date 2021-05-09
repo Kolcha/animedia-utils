@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="animedia-utils",
-    version="0.1.4",
+    version="0.2.0",
     author="Nick Korotysh",
     author_email="kolchaprogrammer@list.ru",
     description="download torrents from tt.animedia.tv",
